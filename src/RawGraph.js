@@ -18,12 +18,12 @@ export default function RawGraph() {
           {
             label: "White",
             data: [15.44],
-            color: "#FEFBEA",
+            color: "red",
           },
           {
             label: "Black",
             data: [25.18],
-            color: "#A792B3",
+            color: "blue",
           },
         ]}
         s
