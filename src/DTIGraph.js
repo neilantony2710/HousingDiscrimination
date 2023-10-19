@@ -4,11 +4,11 @@ export default function DTIGraph() {
   return (
     <>
       <BarChart
-      width = {500}
+      width = {1100}
       height = {400}
         xAxis={[
           {
-            label: "Debt-to-Income Ratio Groups",
+            label: "Debt-to-Income Ratio (%)",
             scaleType: "band",
             data: ["<20", "20-30", "30-40", "40-50", "50-60", ">60"],
           },

@@ -4,12 +4,12 @@ export default function RawGraph() {
   return (
     <>
       <BarChart
-        width={500}
+        width={1100}
         height={400}
         yAxis={[{ label: "Percent of Applicants Denied" }]}
         xAxis={[
           {
-            label: "Income Groups (in thousands of USD)",
+            label: "",
             scaleType: "band",
             data: ["", ""],
           },

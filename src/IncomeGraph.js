@@ -4,11 +4,11 @@ export default function IncomeGraph() {
   return (
     <>
       <BarChart
-      width = {500}
+      width = {1100}
       height = {400}
         xAxis={[
           {
-            label: "Income Groups (in thousands of USD)",
+            label: "Income (in thousands of USD)",
             scaleType: "band",
             data: ["<10", "10-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70-80", "80-90", "90-100", ">100"],
           },
