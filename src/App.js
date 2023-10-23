@@ -28,7 +28,7 @@ export default function Board() {
                 <CardContent>
                   <Typography variant="h4"> Introduction </Typography>
                   <Typography variant="b1"> This website visualizes the surprising amount of housing discrimination that still exists in the United States. The three graphs display the rates at which black and white people get their housing loans denied. The first graph shows the overall denial percentages. The second graph controls the data for income. The third graph controls the data for debt to income ratio. In all three graphs a concerning pattern emerges: Black Americans have disproportionately higher rates of denied loans.                  </Typography>
-                  <Typography variant="h4"> *Note: all data values truncated to two decimal points </Typography>
+                  <Typography variant="b1"> *Note: all data values truncated to two decimal points </Typography>
                 </CardContent>
               </Card>
             </Grid>
