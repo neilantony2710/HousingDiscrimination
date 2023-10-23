@@ -2,34 +2,26 @@
 import numpy as np
 import pandas as pd
 
-# Loading data into chunks
+# Loading data into chunks (neccesary due to large size of data file)
 reader = pd.read_csv("data/2022_public_lar.csv", chunksize=1000000, low_memory=False)
 
-# Pre-Processing Chunks due to size of data
+# Pre-Processing Chunks 
 chunks = []
 for chunk in reader:
     chunks.append(chunk)
 
-print(len(chunks))
 # Combining Chunks to one data frame
 df = pd.concat(chunks)
 print(df.shape)
-'''
-# Finding % of Applicants Denied grouped by white / black
+
+# Splitting data into two dataframes, one for white applicants, and one for black applicants
 W = df[df["applicant_race_1"] == 5]
 B = df[df["applicant_race_1"] == 3]
 
 
-"""
-User has three options:
-1 - Raw Data (bar graph)
-2 - Normalize for Income (line graph)
-3 - Normalzie for Debt to Income ratio (line graph)
-"""
+# Generating percentages of applicants denied based on race
 
-
-# Generating the three data sets
-# 1
+# Raw percentages
 def rawData(whiteData, blackData):
     whiteDenied = whiteData[whiteData["action_taken"] == 3]
     blackDenied = blackData[blackData["action_taken"] == 3]
@@ -37,7 +29,7 @@ def rawData(whiteData, blackData):
     blackDeniedPercentage = len(blackDenied) / len(blackData)
     return [whiteDeniedPercentage, blackDeniedPercentage]
 
-
+# Controlling the data for income, then finding the percentage of applicants denied 
 def normalizedIncomeData(whiteData, blackData):
     whiteDenied = whiteData[whiteData["action_taken"] == 3]
     blackDenied = blackData[blackData["action_taken"] == 3]
@@ -86,7 +78,7 @@ def normalizedIncomeData(whiteData, blackData):
 
     return [whiteGroups, blackGroups]
 
-
+# Normalizing the data for debt to income ratio, then finding the percentage of applicants denied 
 def normalizedDTIData(whiteData, blackData):
     whiteDenied = whiteData[whiteData["action_taken"] == 3]
     blackDenied = blackData[blackData["action_taken"] == 3]
@@ -243,4 +235,4 @@ for i in range(0, 6):
     if i != 5:
         f.write(",")
 f.write("]\n")
-'''
+
